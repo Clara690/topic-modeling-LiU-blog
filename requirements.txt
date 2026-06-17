@@ -1,0 +1,17 @@
+# Data handling & Arrays
+pandas
+numpy
+
+# Natural Language Processing & Text Processing
+gensim
+nltk
+spacy
+
+# Data Visualization
+pyLDAvis
+nbformat
+ipython 
+
+# BERTopic
+bertopic
+bertopic[visualization]

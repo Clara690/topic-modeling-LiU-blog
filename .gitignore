@@ -1,0 +1,14 @@
+# Python-generated files
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv
+**venv
+venv/
+
+# config.py
+**/config.py
+tagger/config.py
