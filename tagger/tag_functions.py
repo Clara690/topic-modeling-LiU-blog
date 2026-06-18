@@ -34,14 +34,30 @@ def get_or_create_category_id(session, cat_name):
     print(f'Catetory erro for "{cat_name}": {create_res.text}')
     return None
 
+# the uncategorized id is 1 on WP
+UNCATEGORIZED_ID = 1
+
 def update_post_categories(session, post_id, category_ids):
-    # append new categories to the post
-    post_res = session.get(f'{WP_URL}/posts/{post_id}')
-    existing_cats = post_res.json().get('categories', []) if post_res.status_code == 200 else []
+    """ replace existing categories with the new list remove the "uncategorized" tags"""
+    # filter out the uncategorized id 
+    clean_cats = [cat_id for cat_id in category_ids if cat_id != UNCATEGORIZED_ID]
 
-    # merge existing and new unique categories
-    all_cats = list(set(existing_cats + category_ids))
+    if not clean_cats:
+        return False
+    response = session.post(
+        f'{WP_URL}/posts/{post_id}',
+        json={'categories': clean_cats}
+    )
+    return response.status_code == 200
 
-    # update the post 
-    update_res = session.post(f'{WP_URL}/posts/{post_id}', json={'categories':all_cats})
-    return update_res.status_code == 200
+
+    # # append new categories to the post
+    # post_res = session.get(f'{WP_URL}/posts/{post_id}')
+    # existing_cats = post_res.json().get('categories', []) if post_res.status_code == 200 else []
+
+    # # merge existing and new unique categories
+    # all_cats = list(set(existing_cats + category_ids))
+
+    # # update the post 
+    # update_res = session.post(f'{WP_URL}/posts/{post_id}', json={'categories':all_cats})
+    # return update_res.status_code == 200

@@ -12,16 +12,17 @@ import random
 session = requests.Session()
 session.auth = (USERNAME, PASSWORD)
 
-# add random sleep time
-sec = random.random() * 2  # add a random delay 
 
 # load the data
 df = pd.read_csv(FILE)
-df = df.iloc[1:5]
+df = df.iloc[5:7]
 df = df.dropna()
 print(f'There is a total of {df.shape[0]} posts to be updated')
 
 for idx, row in df.iterrows():
+    # add random sleep time
+    sec = random.random() * 2  # add a random delay 
+
     post_url = row['link']
     title = row['title']
     
@@ -47,9 +48,10 @@ for idx, row in df.iterrows():
     if cat_ids:
         success = update_post_categories(session, post_id, cat_ids)
         if success:
-            print(f'Updated categories for {title}')
+            print(f'Categories updated successfully!')
         else:
-            print(f'Failed to update categories for {title}')
+            print(f'Failed to update categories for {title}, no new categories to applied')
     else:
         print(f'No valid category IDs could be resolved for {title}')
     time.sleep(sec)
+    print(f'Paused for {sec}...')
