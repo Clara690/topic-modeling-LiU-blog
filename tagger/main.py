@@ -15,8 +15,6 @@ session.auth = (USERNAME, PASSWORD)
 
 # load the data
 df = pd.read_csv(FILE)
-df = df.iloc[5:7]
-df = df.dropna()
 print(f'There is a total of {df.shape[0]} posts to be updated')
 
 for idx, row in df.iterrows():
