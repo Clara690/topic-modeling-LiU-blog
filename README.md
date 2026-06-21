@@ -32,9 +32,9 @@ In a nutshell, this project provides an end-to-end data pipeline that scrapes bl
 
 ## How to run the tag automator 
 At the root directory, run:\
-    ```
-    python -m tagger.main
-    ```
+```bash
+python -m tagger.main
+```
 
 ## Results of topic modeling
 The model extracts a total of 7 topics from all the 611 posts. The 10 most common terms for each topic is shown below. 
