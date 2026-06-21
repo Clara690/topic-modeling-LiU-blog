@@ -28,11 +28,13 @@ In a nutshell, this project provides an end-to-end data pipeline that scrapes bl
 ├── crawler_main.py            # Execution script to run the web scraper pipeline
 ├── requirements.txt           # Python dependencies
 └── README.md
-
+```
 
 ## How to run the tag automator 
 At the root directory, run:
-    `python -m tagger.main`
+    ```text
+    python -m tagger.main
+    ```
 
 ## Results of topic modeling
 The model extracts a total of 7 topics from all the 611 posts. The 10 most common terms for each topic is shown below. 
