@@ -1,7 +1,7 @@
 ## What's this project about?
-In a nutshell, this project provides an end-to-end data pipeline that scrapes blog posts from [Linköping University (LiU) student blog](https://internationalstudents.blog.liu.se/), performs unsupervised topic modeling using BERTopic to discover core themes, and automatically categorizes the live posts using the WordPress REST API.
+In a nutshell, this project provides an end-to-end data pipeline that scrapes blog posts from [Linköping University (LiU) student blog](https://internationalstudents.blog.liu.se/), performs unsupervised topic modeling using BERTopic to discover core themes, and automatically categorizes the live posts using the WordPress REST API.\
 
-🔑 Note: Admin access to the target WordPress site is required to run the full pipeline. However, if you are simply looking to automate post classification on your own WordPress site, you can directly utilize the standalone modules inside the tagger/ directory! ✨
+🔑 Note: Admin access to the target WordPress site is required to run the full pipeline. However, if you are simply looking to automate post classification on your own WordPress site, you can directly utilize the standalone modules inside the *tagger/* directory! ✨
 
 
 ### Project architecture
@@ -31,8 +31,8 @@ In a nutshell, this project provides an end-to-end data pipeline that scrapes bl
 ```
 
 ## How to run the tag automator 
-At the root directory, run:
-    ```text
+At the root directory, run:\
+    ```
     python -m tagger.main
     ```
 
