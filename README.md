@@ -14,6 +14,7 @@ In a nutshell, this project provides an end-to-end data pipeline that scrapes bl
 3. WordPress API Tagger: Maps the model's outputs to specific WordPress category IDs and updates the live site via automated API requests.
 
 ### Directory structure
+```text
 ├── data/
 │   ├── blog_posts.csv         # Scraped raw data from the website
 │   ├── tagged_posts.csv       # Categorized posts outputted by BERTopic
